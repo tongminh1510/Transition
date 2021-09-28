@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng vòng lặp do-while</title>
+</head>
+<body>
+    <button onclick="game()">Let's guess the number!</button>  
+    <script>
+        /*let value = null;
+        do {
+            value = prompt("Nhập vào số từ 1 đến 10 ")
+        } while (value < 1 || value > 10 );
+        alert ("Số bạn vừa nhập vào là : " + value); */
+
+        /* let n = parseInt(prompt("Nhập vào số : "));
+        while (n <= 100 ) {
+            if (n % 2 ==  0 ) {
+                document.write(n + " ");
+            }n++;
+        } */
+
+        /*let i = 1;
+        do {
+            document.write(i + " ");
+            i++;
+        }while(i <= 10 ); */
+        function game() {
+            let maxNumber = parseInt(prompt("Nhập số lớn nhất vào đây : "));
+            let minNumber = parseInt(prompt("Nhập vào số bé nhất "));
+            let randomNumber = Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+            let count = 0;
+            let myNumber;
+            let isOK = false;
+            while (count < 3 ) {
+                myNumber = parseInt(prompt("Nhập số bạn chọn : "));
+                if (myNumber === randomNumber) {
+                    isOK = true;
+                    break;
+                }
+                count++;
+            }if (isOK == true ){
+                alert("Ok");
+            }else {
+                alert('wrong')
+            }
+            }
+    </script>
+</body>
+</html>
